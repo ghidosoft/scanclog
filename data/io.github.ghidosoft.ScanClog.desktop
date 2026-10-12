@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=ScanClog
+GenericName=Document Scanner
+Comment=Scan documents from network scanners with non-destructive adjustments
+Exec=scanclog
+Icon=scanner
+Terminal=false
+Categories=Graphics;Scanning;GTK;
+Keywords=scan;scanner;eSCL;AirScan;PDF;document;
+StartupNotify=true
+StartupWMClass=scanclog

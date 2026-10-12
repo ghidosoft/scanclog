@@ -1,0 +1,36 @@
+[package]
+name = "scanclog"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+description = "A small, non-destructive eSCL (AirScan) scanning tool for GTK4"
+license = "MIT"
+repository = "https://github.com/ghidosoft/scanclog"
+readme = "README.md"
+keywords = ["scanner", "escl", "airscan", "gtk4", "pdf"]
+categories = ["multimedia::images"]
+
+[dependencies]
+anyhow = "1.0.104"
+async-channel = "2"
+clap = { version = "4", features = ["derive"] }
+directories = "6"
+env_logger = "0.11.11"
+fax = "0.3"
+gtk = { version = "0.11", package = "gtk4", features = ["v4_14"] }
+image = { version = "0.25", default-features = false, features = ["jpeg", "png"] }
+log = "0.4.34"
+mdns-sd = "0.21"
+pdf-writer = "0.15"
+png = "0.18.1"
+quick-xml = "0.42"
+serde = { version = "1", features = ["derive"] }
+thiserror = "2.0.21"
+toml = "1"
+ureq = "3"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
