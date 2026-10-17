@@ -1,0 +1,58 @@
+name: Device report
+description: Tell us how ScanClog works with your scanner
+title: "Device: "
+labels: ["device report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing ScanClog with your scanner! Reports about devices
+        that work are as welcome as reports about devices that do not.
+  - type: input
+    id: device
+    attributes:
+      label: Scanner
+      description: Manufacturer and model.
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Does it work?
+      options:
+        - Everything I tried works
+        - Partly
+        - Not at all
+    validations:
+      required: true
+  - type: checkboxes
+    id: tried
+    attributes:
+      label: What did you try?
+      options:
+        - label: Automatic discovery
+        - label: Adding the scanner by address
+        - label: Flatbed preview and scan
+        - label: Document feeder
+  - type: textarea
+    id: probe
+    attributes:
+      label: Output of `scanclog probe`
+      description: |
+        Run `scanclog probe` (or `scanclog probe --host ADDRESS`) and paste
+        the output. The `uuid` and `endpoint` lines identify your device and
+        network; feel free to remove or mask them.
+      render: text
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: |
+        What went wrong, if anything. A log helps: run
+        `RUST_LOG=scanclog=debug scanclog` and paste the relevant part; like
+        the probe output, it contains the address of the scanner.
+  - type: input
+    id: system
+    attributes:
+      label: Linux distribution and ScanClog version
+      placeholder: Ubuntu 24.04, ScanClog 0.1.0
