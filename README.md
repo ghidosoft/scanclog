@@ -1,5 +1,7 @@
 # ScanClog
 
+[![CI](https://github.com/ghidosoft/scanclog/actions/workflows/ci.yml/badge.svg)](https://github.com/ghidosoft/scanclog/actions/workflows/ci.yml)
+
 A small scanning application for Linux that talks directly to network scanners
 over **eSCL** (also known as AirScan or Mopria scan), with **non-destructive**
 adjustments.
@@ -11,8 +13,13 @@ even after scanning, without losing quality and without scanning again.
 
 Press **Preview** for a quick low-resolution scan of the glass: the document is
 found and selected for you. Adjust the area and the settings while watching the
-result, then press **Scan**. Repeat for more pages,
-reorder them, and save everything as one PDF.
+result, then press **Scan**. Repeat for more pages, reorder them, and save
+everything as one PDF.
+
+![The preview of a tilted page: ScanClog has found the document on the glass, straightened it and selected it for scanning.](docs/screenshots/preview.png)
+
+ScanClog is young: version 0.1, tested on one device so far (see
+[Requirements](#requirements)).
 
 ## Features
 
@@ -36,6 +43,8 @@ reorder them, and save everything as one PDF.
   JPEG or PDF.
 - Remembers the scanner and your settings between sessions.
 
+![A page scanned in color and switched to black and white afterwards, with the automatic threshold.](docs/screenshots/black-and-white.png)
+
 ## Requirements
 
 - Linux with GTK 4.14 or newer (for example Linux Mint 22, Ubuntu 24.04,
@@ -45,8 +54,9 @@ reorder them, and save everything as one PDF.
   their specifications.
 
 So far ScanClog has been tested with one inkjet multifunction printer, using
-both the flatbed and the document feeder. Reports about other devices are
-welcome.
+both the flatbed and the document feeder.
+[Reports about other devices](https://github.com/ghidosoft/scanclog/issues/new?template=device-report.yml)
+are welcome, whether they work or not.
 
 ## Building and installing
 
