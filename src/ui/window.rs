@@ -629,6 +629,15 @@ impl App {
                 }
                 match result {
                     Ok((client, caps)) => {
+                        // Scanners added by address are listed under their
+                        // host until the device tells its model.
+                        let name = match (&uuid, &caps.make_and_model) {
+                            (None, Some(model)) => {
+                                state.scanners[index].name = model.clone();
+                                model.clone()
+                            }
+                            _ => name,
+                        };
                         state.config.scanner = Some(SavedScanner {
                             name: name.clone(),
                             uuid,
